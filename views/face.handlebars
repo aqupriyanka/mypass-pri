@@ -1,0 +1,53 @@
+<h5>Face Authentication</h5>
+
+<h3>Test Video</h3>
+
+<div id="upload_status" class="center-block"></div>
+
+<div id="upload_result" class="center-block"></div>
+
+<div class="row">
+	<form id="main-form" role="form" action="/api/face/{{api_phase}}" enctype="multipart/form-data" method="POST" class="col s12 m12" style="max-width:30%;margin-left:35%">
+		
+		<input id="csrf" type="hidden" name="_csrf" value="{{csrf}}">
+		
+		<div class="input-field row">
+			<input id="username" type="text" name="username" autocomplete="off" value="test">
+			<label for="username">username</label>
+		</div>
+		
+		<!-- FOR LOGIN/SIGNUP, THERE IS NO NEED TO UPLOAD A PHOTO, AND PRESS SUBMIT BUTTON -->
+		<!--
+		<div class="file-field input-field row">
+			<div id="img-input-wrap" class="btn btn-large light">
+				<span> <i class="material-icons">photo</i>PassPhoto </span>
+				<input id="image" type="file" accept="image/*;capture=camera" name="image" class="validate">
+			</div>
+		</div>
+		<div class="input-field row">
+			<button id="submit" type="button" class="btn light"> Submit </button>
+		</div>
+		-->
+
+	</form>
+</div>
+
+	<div id="camera-wrap">
+		<div id="camera">
+			<div class="placeholder"> Your browser does not support camera access. We recommend <a href="https://www.google.com/chrome/" target="_blank">Chrome</a>			&mdash; modern, secure, fast browser from Google.<br> It's free. </div>
+		</div>
+		<button id="shutter" class="btn">
+			<span id="shutter-filling"></span>
+		</button>
+		<div id="confirmation-wrap">
+			<button id="deny" class="prompt-btn icon-btn btn"><i class="material-icons">close</i></button>
+			<button id="accept" class="prompt-btn icon-btn btn"><i class="material-icons">done</i> </button>
+		</div>
+	</div>
+<div id="camera-info-wrap">
+	<div id="camera_info"></div>
+	<div id="stream_stats"></div>
+</div>
+
+
+<div id="dump" name="dump"></div>

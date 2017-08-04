@@ -1,0 +1,55 @@
+<h5>Text</h5>
+
+
+<div class="row">
+	<form action="/api/text/{{api_phase}}" class="text-form" method="POST">
+		<!-- <div class="row">
+			<div class="input-field col s12 m6">
+				<input id="firstname" name="firstname" type="text" class="validate signup">
+				<label for="firstname">First Name</label>
+			</div>
+			<div class="input-field col s12 m6">
+				<input id="lastname" name="lastname" type="text" class="validate signup">
+				<label for="lastname">Last Name</label>
+			</div>
+		</div> -->
+	{{#if isSignup}}
+		<div class="row">
+			<div class="input-field">
+				<input id="email" name="email" type="email" class="validate signup">
+				<label for="email">email</label>
+			</div>
+		</div>
+		<div class="row">
+			<div class="input-field">
+				 <input id="username" name="username" type="text" class="signup"> 
+				<label for="username">username</label>
+			</div>
+		</div>
+		{{else}}
+		<div class="row">
+			<div class="input-field">
+				 <input id="uid" name="uid" type="text" class="signup"> 
+				<label for="uid">username or email</label>
+			</div>
+		</div>
+	{{/if}}
+		<div class="row">
+			<div class="input-field">
+				<input id="password" name="pw" type="password" class="signup pw">
+				<label for="password">password</label>
+			</div>
+		</div>
+	{{#if isSignup}}
+		<div class="row">
+			<div class="input-field">
+				<input id="confirm-password" type="password" class="signup pw">
+				<label for="confirm-password">confirm password</label>
+			</div>
+		</div>
+		<button type="submit" class="submit-btn btn">Create Account</button>
+		{{else}}
+		<button type="submit" class="submit-btn btn">Login</button>
+	{{/if}}
+	</form>
+</div>
